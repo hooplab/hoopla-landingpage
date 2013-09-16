@@ -1,0 +1,1067 @@
+@import 'bourbon/bourbon';
+@import 'grid-settings';
+@import 'neat/neat';
+@import 'variables';
+@import 'fonts';
+@import 'entypo';
+
+html, body {
+  @include box-sizing(border-box);
+  @include media($mobile) { font-size: 100%; }
+  @include media($tablet) { font-size: 100%; }
+  @include media($desktop) { font-size: 100%; }
+  padding: 0px;
+  margin: 0px;
+  background: $white;
+
+}
+
+body {
+  // background: url('../images/concert10.jpg') no-repeat center center fixed;
+  // -moz-background-size: cover;
+  // -webkit-background-size: cover;
+  // -o-background-size: cover;
+  // background-size: cover;
+}
+
+// MENU BAR TOP
+
+
+
+
+// Containers
+.top-menu-container {
+  @include transition (background 0.2s ease-in-out);
+  width: 100%;
+  height: $top-menu-height;
+  background: $dark-d1;
+
+  // position: absolute;
+  // z-index:999;
+  // background: #4e5b66;
+  // overflow: hidden;
+  top: 0px;
+  position: relative;
+  z-index: 999;
+  @include media($mobile) { background: $dark-d1; }
+  @include media($tablet) { background: $dark-d1; }
+  @include media($desktop) { background: $dark-d1; }
+  border-bottom: 1px dotted $dark;
+
+  .top-menu-content {
+    @include outer-container;
+  }
+}
+
+// Sizes
+.top-menu-user {
+  @include span-columns(1);
+}
+
+.top-menu-right {
+  @include media($mobile) { display: none; }
+  @include media($tablet) { display: none; }
+  @include media($desktop) { @include span-columns(10); }
+}
+
+.top-menu-center {
+  @include media($mobile) { display: none; }
+  @include media($tablet) { display: none; }
+  @include media($desktop) { @include span-columns(2); }
+  a { border: 0px;
+    img { border: 0px; }
+  }
+}
+
+.top-menu-center-mobile {
+  @include media($mobile) { @include span-columns(2); @include shift(2);}
+  @include media($tablet) { @include span-columns(2); @include shift(5);}
+  @include media($desktop) { display: none; }
+  text-align: center;
+  a { border: 0px;
+    img { border: 0px; height: 80px; width: auto; display: inline-block; margin-top: -10px;}
+  }
+}
+
+
+.top-menu-left {
+  @include span-columns(2);
+  
+}
+
+// Main Navigation Menu
+ul.menu {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  margin: 0 auto;
+  float: right;
+  li {
+    display: inline-block;
+    text-align: center;
+
+
+    i {
+      @include transition (all 0.2s ease-in-out);
+      @include white-font;
+      display: block;
+      position: absolute;
+      left: 50%;
+      margin-left:-14px;
+      font-size: 19px;
+      margin-top: -50px;
+      opacity: 0;      
+    }
+    a {
+      @include transition (all 0.1s ease-in-out);
+      @include gill-book;
+      @include white-font;
+      color: #7f8993;
+      font-size: 0.9em;
+      display: inline-block;
+      padding: 30px 15px;
+      position: relative;
+      margin-left:-4px;
+      background: none;
+      text-decoration: none;
+      // border-bottom: 0px solid $white;
+      text-transform: uppercase;
+      &:hover {
+        i {
+          margin-top: -25px;
+          opacity: 1;
+        }
+        color: $white;
+        text-decoration: none;
+        position: relative;
+        z-index: 400;
+        top: 10px;
+        padding-bottom: 24px;
+
+        // background: $light;
+        // border-bottom: 3px solid $white;      
+      }
+    }
+
+    .user-login {
+      color: $white;
+    }  
+  }
+}
+
+// Drop Down Menu
+a.drop-menu {
+
+  &:hover {
+    
+  }
+}
+
+.active-menu {
+  background: $hoopla;
+  color: $white;
+}
+
+ul.dropdown-menu {
+ 
+  @include white-font;
+  background: $hoopla;
+  width: 200px;
+  padding:10px 20px;
+  margin:0px;
+  margin-top:-7px;
+  position: absolute;
+  z-index: 900;
+  display: block;
+  &:hover {
+    display: block;
+  }
+  li {
+    display: block;
+    padding: 10px 0px;
+  }
+}
+
+.user-menu {
+  margin-right: 200px;
+}
+
+// TESTGROUNDS
+
+.sticky-padding {
+  margin-top: 80px;
+}
+
+
+.test-bar {
+  width: 20px;
+  height: 0px;
+  position: fixed;
+  z-index: 999;
+  top: 200px;
+  left: 100px;
+  background: blue;
+}
+
+.top-brander {
+    display: block;
+    width: 90px;
+    height: auto;
+   margin: 0 auto;
+   margin-top: 23px;
+ 
+}
+.brand {
+  position: absolute;
+  top: 0px;
+  z-index: 200;
+  width: 100px;
+  height: 140px;
+  background: blue;
+}
+
+// DROPPER TEST
+// .dropper-test:hover  {
+//     .dropper-list {
+//       left: 0px;
+//     }
+//     background: green;
+// }
+
+// .dropper-list {
+//   position: absolute;
+//   left: -9999px;
+//   z-index: 999;
+// } 
+
+.striper {
+  width: 100%;
+  height: 10px;
+  background: url(../images/bg-inter-50.png) repeat;
+  position: relative;
+  z-index: 800;
+  top: 0px;
+}
+
+.top-link-circle {
+  margin-top: 25px;
+  margin-right: 20px;
+  width: 30px;
+  height: 30px;
+  background: #aab1b8;
+  float: right;
+  line-height: 30px;
+  border-radius: 20px;
+  overflow: hidden;
+  opacity: 0;
+  position: relative;
+  z-index: 900;
+  @include transition (background 0.1s ease-in-out);
+  &:hover {
+    background: $dark;
+  }
+  &:active {
+    background: $dark-d2;
+  }
+    a.top-link {
+      color: $white;
+      position: relative;
+      font-size: 20px;
+      padding: 40px 0px;
+      &:hover {
+
+      }
+    }
+}
+
+// Sticky menu styles
+.sticky {  
+    position: fixed;  
+    width: 100%;  
+    left: 0;  
+    z-index: 999;  
+    border-top: 0;
+    
+  
+} 
+
+.screenshots {
+  text-align: center;
+  margin-bottom: -4px;
+  img {
+    display: inline-block;
+    width: 947px;
+    width: 100%;
+  }
+}
+
+a.muted {
+  color: #8a8f95;
+  @include avenir-light;
+}
+
+// Hero Unit Styles
+.hero-container {
+  width: 100%;
+  background: $dark-d1;
+  @include linear-gradient(#3c454f, $dark-d2);
+
+      .arrow-down {
+      @include media($mobile) { display: none;}
+      @include media($tablet) { display: none;}
+      @include media($desktop) { display: block;}
+      }
+  // background: $dark-d2;
+  // background: url(../images/bg-red-90.png) repeat;
+  // background: url("../images/concert13.png") fixed;
+  // background-size: cover;
+  // background-position:center; 
+  .hero-content {
+    @include media($tablet) { border-radius: 0px; }
+    @include media($mobile) { border-radius: 0px; }
+    @include media($desktop) { border-radius: 10px; }
+    @include outer-container;
+    // background: $white;
+    padding: 0px 0px;
+    padding-bottom: 0px;
+      .hero-element {
+      @include media($mobile) { padding: 0px 20px; @include white-font; color: $white;}
+      @include media($tablet) { padding: 0px 40px; @include white-font; color: $white;}
+      @include media($desktop) { padding: 0px 0px; @include white-font; color: $white;}    
+      @include span-columns(12);
+      
+      text-align: center;
+      position: relative;
+
+      .hero-text {
+        max-width: 1000px;
+        
+        text-align: center;
+        margin: 0 auto;
+      }
+
+
+      h2 {
+        // text-shadow: 0px 0px 20px #000;
+        @include media($mobile) { font-size: 2.2em; }
+        @include media($tablet) { font-size: 2.8em; }
+        @include media($desktop) { font-size: 3.2em; }
+        margin-bottom: 10px;
+        padding-top: 80px;
+        text-align: center;
+        
+        
+      }
+      p {
+        padding: 10px 0px;
+        font-size: 1.4em;
+
+        // text-shadow: 0px 0px 10px #000;      
+      }
+
+    }
+  }
+
+.hero-action {
+  background: $dark-d1;
+  height: 170px;
+  margin-top: 50px;
+  text-align: center;
+  .btn {
+    @include media($mobile) { padding: 20px 10px; margin-left: 10px; margin-right: 10px; top: -25px;}
+    @include media($tablet) { padding: 20px 10px; margin-left: 10px; margin-right: 10px; top: -75px;}
+    @include media($desktop) { padding: 20px 40px; margin-left: 0px; margin-right: 0px; top: -75px;}
+    position: relative;
+    text-decoration: none;
+    
+  }
+}
+
+.hero-point {
+  @include media($mobile) { @include span-columns(6 of 6); background: none; padding: 20px 0px;}
+  @include media($tablet) { @include span-columns(12 of 12); background: none; padding: 40px 0px;}
+  @include media($desktop) { @include span-columns(4 of 12); @include omega(4n); background: none; padding: 20px 0px;}
+  text-align: center;
+  margin-bottom: 20px;
+  border-radius: 5px;
+    img {
+      max-width: 150px;
+      padding-bottom: 20px;
+      display: inline-block;
+    }
+  }
+}
+
+  .hero-triangle {
+    position: relative;
+    top: -2em;
+    @include triangle(3em, $hoopla, down);
+    margin-left: -1.5em;
+    left: 50%
+    // @include triangle(50px, #161a1d, down);
+  }
+
+
+.arrow-down {
+    width: 100px;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    top: -50px;
+}
+
+
+.slides-container {
+    background: none;
+  @include media($mobile) { @include span-columns(6 of 6); padding: 20px; height: 250px;}
+  @include media($tablet) { @include span-columns(8 of 12); padding: 20px; height: 200px;}
+  @include media($desktop) { @include span-columns(8 of 12); padding: 0px; height: 150px;}
+
+    
+}
+
+#slides {
+
+  padding-top: 20px;
+
+  img {
+    width: 10%;
+    float: left;
+   
+  }
+  p.quote {
+    width: 80%;
+    padding: 0% 5%;
+    @include semi-font;
+    font-size: 1.2em;
+    color: $dark-d3;
+    float: left;
+  }
+}
+
+.quote-signoff {
+  @include gill-book;
+  color: #aaa;
+  float: right;
+}
+
+.partners {
+  @include media($mobile) { @include span-columns(6 of 6); padding: 20px; height: 200px;}
+  @include media($tablet) { @include span-columns(4 pf 12); padding: 20px; height: 200px;}
+  @include media($desktop) { @include span-columns(4 of 12); padding: 0px; height: 150px;}
+  text-align: center;
+  height: 150px;
+  
+  img {
+    display: inline-block;
+    width: 100%;
+    padding-top: 20px;
+  }
+}
+
+// Quotes Section Styles
+.quotes-container {
+  width: 100%;
+  padding: 40px 0px;
+
+  background: #eef0f1;
+  background: $turq;
+  background: $hoopla;
+  background: #eee;
+  @include linear-gradient(#fff, #eee);
+
+    h4 {
+      text-align: left;
+      @include semi-font;
+     color: $dark;
+      font-size: 0.6em;
+      padding-bottom: 10px;
+      border-bottom: 1px dotted #aab0b7;
+  }
+
+  // background: url(../images/bg-light-90.png) repeat;
+    .headline {
+      text-align: center;
+      color: $turq;
+      margin: 20px 20px 60px 20px;    
+    }
+
+  .quotes-content {
+    border-top: 10px;
+    @include outer-container;
+    background: none;
+   
+
+  }
+}
+
+.quote-text-new {
+  margin-top: -10px;
+  padding: 20px;
+  background: $turq;
+}
+.quotes-new {
+  @include media($mobile) { @include span-columns(6); padding: 20px;}
+  @include media($tablet) { @include span-columns(12); padding: 40px;}
+  @include media($desktop) { @include span-columns(4); @include omega(4n); padding: 0px;}
+  background: none;
+  @include white-font;
+  color: #1e4d49;
+  img {
+    @include media($mobile) { display: none; }
+    @include media($tablet) { display: none; }
+    @include media($desktop) { display: inline-block;}
+  }
+  h2 {
+   
+  }
+  
+  p.quote {
+   
+  }
+
+
+
+}
+
+
+
+// Functions Styles
+
+.arrower {
+      @include media($mobile) { display: block; }
+      @include media($tablet) { display: block; }
+      @include media($desktop) { display: block; }
+  width: 100%;
+  text-align: center;
+  img {
+    width: 250px;
+    display: inline-block;
+  }
+}
+
+.function-arrow-down {
+  position: relative;
+  z-index: 500;
+  top: -155px;
+  left: 50%;
+  margin-left: -25px;
+  @include triangle(50px, #eee, down);
+}
+
+.functions-container {
+  width: 100%;
+  background: $white;
+  overflow: hidden;
+  @include semi-font;
+  padding-top: 175px;
+  padding-bottom: 175px;
+
+  .functions-content {
+    @include outer-container;
+    background: none;
+    .headline {
+      text-align: center;
+      color: $hoopla;
+      padding: 3em 0em;     
+    }
+
+    .single-function {
+      padding: 0px 0px;
+      @include span-columns(12);
+      background: none;
+      
+      // border-bottom: 1px dashed #d4d8db;
+
+      .function-text {
+        // @include span-columns(6 of 12);
+        @include media($mobile) { @include span-columns(3 of 6); padding: 0px 10px; text-align: justify;}
+        @include media($tablet) { @include span-columns(6 of 12); padding: 0px 20px; text-align: justify; }
+        @include media($desktop) { @include span-columns(6 of 12); padding: 0px 40px; text-align: justify;}   
+        
+        h3 {
+        @include media($mobile) { font-size: 1.8em; text-align: left; padding-top: 0px;}
+        @include media($tablet) { font-size: 2.4em; text-align: left; padding-top: 0px;}
+        @include media($desktop) { font-size: 2.5em; text-align: left; padding-top: 40px;}   
+        
+        }
+        p {
+          
+          font-size: 1.2em; 
+        }
+      }
+
+      .shifter {
+        @include shift(1);
+          img {
+            float: right;  
+          }
+      }
+
+
+      .ft-right {
+        text-align: left;
+      }
+
+      .function-image {
+        @include media($mobile) { @include span-columns(2);   padding: 0px 10px; background: none;}
+        @include media($tablet) { @include span-columns(4);  padding: 0px 20px; background: none;}
+        @include media($desktop) { @include span-columns(4);  padding: 0px 20px; background: url(../images/strip2.png) repeat;}  
+        // @include span-columns(6 of 12);
+        text-align: center;
+        
+        min-height: 300px;
+        border-radius: 10px;
+
+
+
+        img {
+        display: inline-block;
+         @include media($mobile) { width: 300px; }
+         @include media($tablet) { width: 300px; }
+         @include media($desktop) { width: 300px; }  
+
+        }
+      }
+
+
+      }
+    }
+  }
+
+
+.function-01 {
+
+}
+
+.circle-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  background: url("../images/concert2.png");
+  background-size: cover;
+  margin: 25px;
+  float: left;
+  &:hover {
+    background-size: cover;
+  }
+}
+
+.circle-icon {
+  width: 150px;
+  height: 150px;
+}
+
+
+
+// About sections
+.about-container {
+  width: 100%;
+  background: #fafafa;
+  @include semi-font;
+  .about-content {
+    padding-top: 100px;
+    @include outer-container;
+    background: none;
+    .about-text {
+        @include media($mobile) { @include span-columns(6); @include shift(0); padding: 0px 20px;}
+        @include media($tablet) { @include span-columns(10); @include shift(1); padding: 0px 40px;}
+        @include media($desktop) { @include span-columns(8); @include shift(2); padding: 0px;}
+
+      text-align: justify;
+    }
+    .about-users {
+        @include media($mobile) {  @include span-columns(6); @include shift(0);}
+        @include media($tablet) {  @include span-columns(12); @include shift(0);}
+        @include media($desktop) { @include span-columns(12); @include shift(0);}
+      padding-top: 100px;
+      padding-bottom: 150px;
+      @include span-columns(8); @include shift(2);
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      
+      .user-image {
+        @include media($mobile) { @include span-columns(3 of 6); @include omega(2n); padding: 10px;}
+        @include media($tablet) { @include span-columns(4 of 12); @include omega(2n); padding: 10px;}
+        @include media($desktop) { @include span-columns(3 of 12); @include omega(2n); padding: 10px;}
+        text-align: center;
+        height: 240px;
+        @include semi-font;
+
+        img {
+          border-radius: 400px;
+          width: 100%;
+          max-width: 150px;
+          height: auto;
+          
+        }
+        h4 {
+          text-transform: uppercase;
+          font-size: 1em;
+        }
+        p {
+          font-size: 0.8em;
+        }
+      }
+    }   
+  }
+}
+
+// Price container
+.price-arrow-down {
+  position: relative;
+  z-index: 300;
+  top: -80px;
+  left: 50%;
+  margin-left: -25px;
+  @include triangle(50px, #fff, down);
+}
+
+
+.price-container {
+  width: 100%;
+  background: $turq;
+  padding: 100px 0px;
+  padding-bottom: 100px;
+  @include semi-font;
+  .price-content {
+    @include outer-container;
+    background: none;
+
+
+
+
+    .price-rip-top {
+      @include media($mobile) { @include span-columns(4 of 6); @include shift(1); }
+      @include media($tablet) { @include span-columns(8 of 12); @include shift(2); }
+      @include media($desktop) { @include span-columns(6 of 12); @include shift(3); }
+
+      margin-bottom: -4px;
+      img {
+        width: 100%;
+      }
+    }
+
+    .price-rip-bottom {
+      @include media($mobile) { @include span-columns(4 of 6); @include shift(1); }
+      @include media($tablet) { @include span-columns(8 of 12); @include shift(2); }
+      @include media($desktop) { @include span-columns(6 of 12); @include shift(3); }
+      margin-top:-8px;
+      img {
+        width: 100%;
+      }
+    }
+
+
+
+    .price-text {
+
+      @include media($mobile) { @include span-columns(4 of 6); @include shift(1); padding: 20px 20px;}
+      @include media($tablet) { @include span-columns(8 of 12); @include shift(2); padding: 40px 40px;}
+      @include media($desktop) { @include span-columns(6 of 12); @include shift(3); padding: 80px 40px; }
+      background: $white;
+      
+      h2 {
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px dotted #ccc;
+      }
+      h4 {
+        margin-top:0px;
+        padding-top: 0px;
+        padding-bottom: 30px;
+        margin-bottom: 10px;
+        border-bottom: 1px dotted #ccc;
+      }
+
+      img {
+        padding: 0px 40px;
+        max-width: 300px;
+        text-align: center;
+        display: inline-block;
+      }
+    }
+    .price-table {
+      @include span-columns(6);
+      @include shift(3);
+      text-align: center; 
+      img {
+        max-width: 300px;
+        display: inline-block;
+      }
+    }   
+  }
+}
+
+// Footer container
+.footer-container {
+  width: 100%;
+  background: $dark-d1;
+  @include white-font;
+  .footer-content {
+    padding: 40px 0px 0px 0px;
+    padding-bottom: 60px;
+    @include outer-container;
+    .footer-element-container {
+      @include span-columns(12);
+ 
+
+
+    .footer-element {
+        @include media($mobile) { @include span-columns(6 of 6); @include omega(2n); text-align: left;}
+        @include media($tablet) { @include span-columns(4 of 12); @include omega(3n); text-align: left;}
+        @include media($desktop) { @include span-columns(4 of 12); @include omega(3n); text-align: left;}
+        margin-bottom: 40px;
+
+
+      h4 {
+        padding-bottom: 10px;
+        position: relative;
+        left: 35%;
+      }
+
+      a {
+        position: relative;
+        left: 35%;
+        @include gill-book;
+        font-size: 0.8em;
+        color: $white;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .blobber {
+      overflow: hidden;
+        margin-bottom: 0px;
+        border-bottom: 1px dotted $dark;
+        img {
+          width: 100%;
+        }
+    }
+  }
+  }
+}
+
+
+.btn {
+  margin: 2em 0em;
+  padding: 20px 40px;
+  background: $turq;
+  border-radius: 5px;
+  border: 0px;
+  box-shadow: none;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  @include avenir-med;
+  @include dark-font;
+  font-size: 1.2em;
+  @include transition (all 0.1s ease-in-out);
+  border: 3px solid $dark-d2;
+  box-shadow: 0px 0px 30px $dark;
+  i {
+    padding-right: 5px;
+  }
+  &:hover {
+   
+    
+    background: $turq-d1;
+    cursor: pointer;
+
+  }
+}
+
+// TESTS
+
+
+.content-element {
+ @include media($mobile) { @include span-columns(6); text-align: center; }
+  @include media($tablet) { @include span-columns(8); text-align: center; }
+  @include media($desktop) { @include span-columns(12); text-align: center; }
+}
+
+
+
+
+// Salgsportal
+
+
+.sales-event-type-container, .diverse-container, .hoop-container {
+  background: $hoopla;
+  float: left;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.diverse-container, .hoop-container {
+  display: none;
+  width: 100%;
+  padding: 50px;
+}
+
+.sales-top-menu {
+  ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+
+    li {
+      @include avenir-med;
+      border-radius: 3px 3px 0px 0px; 
+      display: inline-block;
+      padding: 20px;
+      background: $hoopla-d1;
+      @include white-font;
+      margin-right: -5px;
+      &:hover {
+        cursor: pointer;
+        background: $hoopla;
+      }
+    }
+    .active {
+      background: $hoopla;
+    }
+  }
+}
+
+
+.sales-container {
+  width: 100%;
+  min-height: 100vh;
+  background: $dark;
+  float: left;
+
+}
+
+.sales-header {
+  background: none;
+  cursor: pointer;
+  background: $hoopla-d1;
+  padding: 10px 0px;
+
+  &:hover {
+    background: $hoopla-d2;
+  }
+
+}
+
+.sales-body {
+  float: left;
+  display: none;
+  background: $white;
+  padding: 20px 0px;
+}
+
+.sales-text {
+  @include span-columns(6);
+  @include omega(2n);
+  padding: 20px;
+  p {
+    font-size: 2em;
+
+  }
+}
+img.sales-logo {
+  width: 75px;
+  height: auto;
+  position: absolute;
+  top: 0px;
+  
+}
+
+.sales-links {
+  padding: 10px 20px;
+  @include span-columns(12);
+  @include shift(0);
+  }
+
+
+.sales-types, .ads-types {
+   float: left;
+   width: 100%;
+}
+
+.sales-content {
+    @include outer-container;
+    padding: 20px;
+
+    a {
+      @include dark-font;
+      color: $blue;
+      @include gill-book;
+    }
+
+    .sales-intro {
+      @include white-font;
+      @include span-columns(12);
+      padding-top: 50px;
+      padding-bottom: 50px;
+
+    }
+
+    .sales-group {
+      background: #eee;
+
+      margin-bottom: 10px;
+
+      border-radius: 3px;
+      h4 {
+        padding-top:5px;
+        text-align: center;
+        font-size: 1em;
+        @include semi-font;
+      }
+    }
+
+
+
+    .sales-item {
+      // @include transition (padding 0.1s ease-in-out);
+      float: left;
+      @include span-columns(12);
+      margin-bottom: 10px;
+      
+      padding-left: 20px;
+      padding-right: 20px;
+
+      i {
+        margin-right: 10px;
+      }
+
+      a {
+        @include gill-book;
+        color: $blue-d1;
+        font-size: 1.2em;
+        &:hover {
+        color: $blue;
+        }
+      }
+      h3 {
+        @include white-font;
+        font-size: 1.6em;
+        padding-left: 20px;
+      }
+      p {
+        font-size: 0.8em;
+        @include white-font;
+        padding-left:20px;
+        
+      }
+
+      p.info {
+        @include dark-font;
+        font-size: 1em;
+      }
+    }
+
+}
+
+
+
+
+

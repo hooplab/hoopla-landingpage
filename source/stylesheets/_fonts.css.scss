@@ -1,0 +1,109 @@
+// Font-face imports
+@include font-face(Univers-Light, '../fonts/univers/univers-ltw01-45-light');
+@include font-face(Univers-Light-Obl, '../fonts/univers/univers-ltw01-45-light-obl');
+@include font-face(Univers, '../fonts/univers/univers-ltw01-55-roman');
+@include font-face(Univers-Light-Con, '../fonts/univers/univers-ltw01-47-light-cn');
+@include font-face(Univers-Con, '../fonts/univers/univers-ltw01-57-condense-723821');
+@include font-face(Univers-Bold-Con, '../fonts/univers/univers-ltw01-67-bold-cn');
+@include font-face(Open-Sans, '../fonts/open-sans/OpenSansRegular');
+
+// Baseline settings and site-wide
+@mixin white-font { color: $white; -webkit-font-smoothing: antialiased; }
+@mixin dark-font { color: $dark-d3; -webkit-font-smoothing: antialiased;}
+@mixin semi-font { color: $dark; -webkit-font-smoothing: antialiased;}
+
+// @mixin univers-light { font-family:"Univers-Light"; }
+// @mixin univers-light-obl { font-family:"Univers-Light-Obl";}
+// @mixin univers-light-con { font-family:"Univers-Light-Con";}
+// @mixin univers-con { font-family:"Univers-Con";}
+// @mixin univers-bold-con { font-family:"Univers-Bold-Con";}
+// @mixin univers { font-family:"Univers"; }
+// @mixin open-sans { font-family:"Open-Sans"; }
+
+// @mixin slate-light {font-family:'Slate W01 Light';}
+// @mixin slate-regular {font-family:'Slate W01';}
+// @mixin slate-medium {font-family:'Slate W01 Medium';}
+// @mixin slate-bold {font-family:'Slate W01 Bold';}
+// @mixin tabula {font-family:'Tabula ITC W01 Book';}
+// @mixin tabula-medium {font-family:'Tabula ITC W01 Medium';}
+// @mixin tabula-italic {font-family:'TabulaITCW01-BookItalic';}
+
+// @mixin neo-med {font-family:'Neo Sans W01 Medium';}
+// @mixin neo-med-ita {font-family:'NeoSansW01-MediumItalic';}
+// @mixin neo {font-family:'Neo Sans W01';}
+// @mixin neo-ultra {font-family:'Neo Sans W01 Ultra';}
+
+// @mixin soho-light {font-family:'Soho W01 Light';}
+
+// @mixin garamond {font-family:'Garamond W01';}
+
+// @mixin ocean-light {font-family:'Ocean Sans MT W01 Light';}
+// @mixin ocean {font-family:'Ocean Sans MT W01 Book';}
+// @mixin globe-light {font-family:'Globe Gothic W00 Light'}
+
+@mixin avenir-med {font-family:'Avenir LT W01 65 Medium';}
+@mixin gill-book {font-family:'Gill Sans W04 Book';}
+@mixin gill-italic {font-family:'GillSansW04-BookItalic';}
+@mixin avenir-heavy {font-family:'Avenir LT W01 85 Heavy';}
+@mixin avenir-light {font-family:'Avenir LT W01 35 Light';}
+
+@mixin avenir-r {font-family:'AvenirNextRoundedW01-Re';}
+@mixin avenir-r-medium {font-family:'AvenirNextRoundedW01-Md 1075562';}
+@mixin avenir-r-bold {font-family:'AvenirNextRoundedW01-Bo 1075574'}
+// Standard setup
+html, body { font-size: 14px; }
+h1,h2,h3,h4,p {margin: 0px; padding: 0px;}
+
+h1 { font-size: 4em; @include avenir-light;}
+h2 { font-size: 3em; @include avenir-light;}
+h3 { font-size: 2em; @include avenir-light;}
+h4 { font-size: 1.2em; @include avenir-r;}
+h4.quote {font-size: 1em; @include avenir-med;}
+p { font-size: 1.4em; @include gill-book; line-height: 1em;}
+p.quote { font-size: 1.0em; @include gill-italic;}
+h1,h2,h3,h4 {
+	b {
+		
+	}
+	strong {
+		@include avenir-med;
+	}
+}
+// font-family:'Soho W01 Light';
+// font-family:'Slate W01 Medium';
+// font-family:'Slate W01 Bold';
+// font-family:'Tabula ITC W01 Book';
+// font-family:'Slate W01';
+// font-family:'Tabula ITC W01 Medium';
+// font-family:'TabulaITCW01-BookItalic';
+// font-family:'Slate W01 Light';
+// font-family:'Koorkin W01 Regular';
+// font-family:'Koorkin W01 Italic';
+// font-family:'Koorkin W01 Bold Italic';
+// font-family:'Neo Sans W01 Light';
+// font-family:'NeoSansW01-LightItalic';
+// font-family:'Neo Sans W01';
+// font-family:'NeoSansW01-MediumItalic';
+// font-family:'Neo Sans W01 Bold';
+// font-family:'NeoSansW01-BoldItalic';
+// font-family:'NeoSansW01-UltraItalic';
+// font-family:'Neo Sans W01 Ultra';
+// font-family:'Neo Sans W01 Medium';
+// font-family:'Garamond W01';
+// font-family:'Bosis W01 Medium';
+// font-family:'Ocean Sans MT W01 Light';
+// font-family:'Ocean Sans MT W01 Book';
+// font-family:'Globe Gothic W00 Light';
+// font-family:'Avenir LT W01 65 Medium';
+// font-family:'Avenir LT W01 85 Heavy';
+// font-family:'Gill Sans W04 Light';
+// font-family:'Gill Sans W04 Book';
+// font-family:'GillSansW04-BookItalic';
+// font-family:'Avenir LT W01 35 Light';
+// font-family:'AvenirNextRoundedW01-Bo 1075574';
+// font-family:'AvenirNextRoundedW01-Md 1075562';
+// font-family:'AvenirNextRoundedW01-Re';
+
+
+
+
