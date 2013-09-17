@@ -1,5 +1,5 @@
 $(document).ready(function() {
-$('.top-menu-content a').on('click', function(event){     
+$('.internal a').on('click', function(event){     
     event.preventDefault();
     $('html,body').animate({scrollTop:$(this.hash).offset().top-100}, 500);
 });
