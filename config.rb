@@ -29,10 +29,10 @@ with_layout :main_layout do
 end
 
 activate :s3_sync do |s3_sync|
-  s3_sync.bucket                = 'www.hoopla.no' # The name of the S3 bucket you are targetting. This is globally unique.
-  s3_sync.region                = 'eu-west-1'     # The AWS region for your bucket.
-  s3_sync.delete                = true # We delete stray files by default.
-  s3_sync.after_build           = false # We chain after the build step by default. This may not be your desired behavior...
+  s3_sync.bucket                = 'www.hoopladev.no'
+  s3_sync.region                = 'eu-west-1'
+  s3_sync.delete                = true
+  s3_sync.after_build           = false
   s3_sync.prefer_gzip           = true
 end
 
@@ -80,7 +80,7 @@ configure :build do
   # Minify Javascript on build
   activate :minify_javascript
 
-  #Image Optim 
+  #Image Optim
   # activate :image_optim
 
   #Html minify
