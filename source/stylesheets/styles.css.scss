@@ -334,6 +334,9 @@ a.muted {
       position: relative;
 
       .hero-text {
+        @include media($mobile) { text-align: left;}
+        @include media($tablet) { text-align: center; }
+        @include media($desktop) { text-align: center; } 
         max-width: 1000px;
         
         text-align: center;
@@ -348,7 +351,7 @@ a.muted {
         @include media($desktop) { font-size: 3.2em; }
         margin-bottom: 10px;
         padding-top: 80px;
-        text-align: center;
+       
         
         
       }
@@ -575,7 +578,7 @@ a.muted {
 
       .function-text {
         // @include span-columns(6 of 12);
-        @include media($mobile) { @include span-columns(3 of 6); padding: 0px 10px; text-align: justify;}
+        @include media($mobile) { @include span-columns(4 of 6); padding: 0px 10px; text-align: justify;}
         @include media($tablet) { @include span-columns(6 of 12); padding: 0px 20px; text-align: justify; }
         @include media($desktop) { @include span-columns(6 of 12); padding: 0px 40px; text-align: justify;}   
         
@@ -604,7 +607,7 @@ a.muted {
       }
 
       .function-image {
-        @include media($mobile) { @include span-columns(2);   padding: 0px 10px; background: none;}
+        @include media($mobile) { @include span-columns(1);   padding: 0px 10px; background: none;}
         @include media($tablet) { @include span-columns(4);  padding: 0px 20px; background: none;}
         @include media($desktop) { @include span-columns(4);  padding: 0px 20px; background: url(../images/strip2.png) repeat;}  
         // @include span-columns(6 of 12);
@@ -892,7 +895,7 @@ a.muted {
 
 
 .sales-event-type-container, .diverse-container, .hoop-container {
-  background: $hoopla;
+  background: $dark-d1;
   float: left;
   padding-top: 20px;
   padding-bottom: 10px;
@@ -915,16 +918,16 @@ a.muted {
       border-radius: 3px 3px 0px 0px; 
       display: inline-block;
       padding: 20px;
-      background: $hoopla-d1;
+      background: $dark-d2;
       @include white-font;
       margin-right: -5px;
       &:hover {
         cursor: pointer;
-        background: $hoopla;
+        background: $dark-d1;
       }
     }
     .active {
-      background: $hoopla;
+      background: $dark-d1;
     }
   }
 }
@@ -941,11 +944,11 @@ a.muted {
 .sales-header {
   background: none;
   cursor: pointer;
-  background: $hoopla-d1;
+  background: $dark;
   padding: 10px 0px;
 
   &:hover {
-    background: $hoopla-d2;
+    background: $dark-d2;
   }
 
 }
@@ -955,10 +958,11 @@ a.muted {
   display: none;
   background: $white;
   padding: 20px 0px;
+  width: 100%;
 }
 
 .sales-text {
-  @include span-columns(6);
+  @include span-columns(12);
   @include omega(2n);
   padding: 20px;
   p {
