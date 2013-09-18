@@ -686,7 +686,7 @@ a.muted {
       .user-image {
         @include media($mobile) { @include span-columns(3 of 6); @include omega(2n); padding: 10px;}
         @include media($tablet) { @include span-columns(4 of 12); @include omega(2n); padding: 10px;}
-        @include media($desktop) { @include span-columns(3 of 12); @include omega(2n); padding: 10px;}
+        @include media($desktop) { @include span-columns(4 of 12); @include omega(2n); padding: 10px;}
         text-align: center;
         height: 240px;
         @include semi-font;
