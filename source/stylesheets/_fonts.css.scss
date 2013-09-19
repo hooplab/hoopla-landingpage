@@ -41,15 +41,15 @@
 // @mixin ocean {font-family:'Ocean Sans MT W01 Book';}
 // @mixin globe-light {font-family:'Globe Gothic W00 Light'}
 
-@mixin avenir-med {font-family:'Avenir LT W01 65 Medium';}
-@mixin gill-book {font-family:'Gill Sans W04 Book';}
-@mixin gill-italic {font-family:'GillSansW04-BookItalic';}
-@mixin avenir-heavy {font-family:'Avenir LT W01 85 Heavy';}
-@mixin avenir-light {font-family:'Avenir LT W01 35 Light';}
+@mixin avenir-med {font-family:'Avenir LT W01 65 Medium', 'Helvetica Neue', Helvetica, sans-serif;}
+@mixin gill-book {font-family:'Gill Sans W04 Book', 'Helvetica Neue', Helvetica, sans-serif;}
+@mixin gill-italic {font-family:'GillSansW04-BookItalic', 'Helvetica Neue', Helvetica, sans-serif;}
+@mixin avenir-heavy {font-family:'Avenir LT W01 85 Heavy', 'Helvetica Neue', Helvetica, sans-serif;}
+@mixin avenir-light {font-family:'Avenir LT W01 35 Light', 'Helvetica Neue', Helvetica, sans-serif;}
 
-@mixin avenir-r {font-family:'AvenirNextRoundedW01-Re';}
-@mixin avenir-r-medium {font-family:'AvenirNextRoundedW01-Md 1075562';}
-@mixin avenir-r-bold {font-family:'AvenirNextRoundedW01-Bo 1075574'}
+@mixin avenir-r {font-family:'AvenirNextRoundedW01-Re', 'Helvetica Neue', Helvetica, sans-serif;}
+@mixin avenir-r-medium {font-family:'AvenirNextRoundedW01-Md 1075562', 'Helvetica Neue', Helvetica, sans-serif;}
+@mixin avenir-r-bold {font-family:'AvenirNextRoundedW01-Bo 1075574', 'Helvetica Neue', Helvetica, sans-serif;}
 // Standard setup
 html, body { font-size: 14px; }
 h1,h2,h3,h4,p {margin: 0px; padding: 0px;}
@@ -63,7 +63,7 @@ p { font-size: 1.4em; @include gill-book; line-height: 1em;}
 p.quote { font-size: 1.0em; @include gill-italic;}
 h1,h2,h3,h4 {
 	b {
-		
+
 	}
 	strong {
 		@include avenir-med;
