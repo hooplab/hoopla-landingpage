@@ -1,11 +1,18 @@
+<!-- <div class="mobile-site-chooser">
+	<%= image_tag 'logo-red-bg.png' %>
+      <div class="mobile-content">
+      <h3>
+      Hvilken versjon ønsker du å se ?
+      </h3>
+      <a href="#"><i class="icon-mobile"></i><br/>Mobil</a>
+      <a href="#"><i class="icon-monitor"></i><br/>Vanlig</a>
+   </div>
+</div> -->
+
 <%= partial(:menu) %>
 <%= partial(:base_hero_unit, :locals => { :type => "index" }) %>
 <%= partial(:base_quotes_unit, :locals => { :quotes => [1,2,3,4] }) %>
 <%= partial(:base_howto_unit, :locals => { :sections => [1,2,3] }) %>
-
-
-
-
 <%= partial(:base_about) %>
- <%= partial(:footer) %>
+<%= partial(:footer) %>
 

@@ -1,10 +1,24 @@
 <div class="top-menu-container">
 	<div class="top-menu-content">
-		<div class="top-menu-center">
-			<a href="#top"><img src="images/logo-red.png" class="top-brander"/></a>
+		<div class="top-menu-brand">
+			<div class="internal">
+				<div class="stationary-logo">
+				<% link_to '#top' do %>
+	  				<%= image_tag 'logo-dark.png' %>
+				<% end %>
+				</div>
+				<div class="scroller-logo">
+				<% link_to '#top' do %>
+	  				<%= image_tag 'logo-red.png' %>
+				<% end %>
+				</div>
+			</div>
 		</div>
-		<div class="top-menu-center-mobile">
-			<a href="#top"><img src="images/logo-red-bg.png" class="top-brander"/></a>
+
+		<div class="top-menu-brand-mobile">
+				<% link_to '#top' do %>
+	  				<%= image_tag 'logo-red-bg.png' %>
+				<% end %>
 		</div>
 
 		<div class="top-menu-right">

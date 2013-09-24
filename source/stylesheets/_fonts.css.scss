@@ -60,6 +60,7 @@ h3 { font-size: 2em; @include avenir-light;}
 h4 { font-size: 1.2em; @include avenir-r;}
 h4.quote {font-size: 1em; @include avenir-med;}
 p { font-size: 1.4em; @include gill-book; line-height: 1em;}
+a { font-size: 1.4em; @include gill-book; line-height: 1em;}
 p.quote { font-size: 1.0em; @include gill-italic;}
 h1,h2,h3,h4 {
 	b {

@@ -12,49 +12,67 @@ html, body {
   @include media($desktop) { font-size: 100%; }
   padding: 0px;
   margin: 0px;
-  background: $white;
+  background: none;
+}
+// Mobile popup
+.mobile-site-chooser {
+  width: 100vw;
+  height: 100vh;
+  background: $dark-d3;
+  position: absolute;
+  z-index: 1000;
+      img {
+      position: relative;
+      margin-left: -35px;
+      left: 50%;
+      width: 70px;
+    }
+  @include outer-container;
+  .mobile-content {
+    padding: 40px;
+    @include span-columns(12);
+    @include white-font;
+    text-align: center;
+    a {
+      color: $white;
+      text-decoration: underline;
+      font-size: 3em;
+      display: block;
+      background: #000;
+      padding: 20px;
+      margin: 10px;
+    } 
+    i {
+      font-size:  50px;
+      padding: 5px 0px;
+      margin-bottom: 10px;
+      border-radius: 5em;
+      display: inline-block;
+      color: $white;
+      background: none;
+    }
+  }
 }
 
-body {
-  // background: url('../images/concert10.jpg') no-repeat center center fixed;
-  // -moz-background-size: cover;
-  // -webkit-background-size: cover;
-  // -o-background-size: cover;
-  // background-size: cover;
-}
 
 // MENU BAR TOP
-
-
-
-
-// Containers
 .top-menu-container {
   @include transition (background 0.2s ease-in-out);
   width: 100%;
   height: $top-menu-height;
-  background: $dark-d1;
 
-  // position: absolute;
-  // z-index:999;
-  // background: #4e5b66;
-  // overflow: hidden;
+
+
   top: 0px;
   position: relative;
   z-index: 999;
-  @include media($mobile) { background: $dark-d1; border-bottom: 0px dotted $dark;}
-  @include media($tablet) { background: $dark-d1; border-bottom: 0px dotted $dark;}
-  @include media($desktop) { background: $dark-d1; border-bottom: 1px dotted $dark;}
-  
+  @include media($mobile) { background: none; }
+  @include media($tablet) { background: none; }
+  @include media($desktop) { background: none; }
 
   .top-menu-content {
     @include outer-container;
   }
-}
-
-// Sizes
-.top-menu-user {
-  @include span-columns(1);
 }
 
 .top-menu-right {
@@ -63,32 +81,44 @@ body {
   @include media($desktop) { @include span-columns(10); }
 }
 
-.top-menu-center {
+.top-menu-brand {
   @include media($mobile) { display: none; }
   @include media($tablet) { display: none; }
   @include media($desktop) { @include span-columns(2); }
-  a { border: 0px;
-    img { border: 0px; }
+    
+    .scroller-logo {
+      display: none;
+    }
+    .stationary-logo {
+      display: block;
+    }
+
+  a { 
+    border: 0px;
+
+
+    img { 
+      border: 0px; 
+      display: block;
+      width: 90px;
+      height: auto;
+      margin: 0 auto;
+      margin-top: 23px;
+    }
   }
 }
 
-.top-menu-center-mobile {
+.top-menu-brand-mobile {
   @include media($mobile) { @include span-columns(2); @include shift(2);}
   @include media($tablet) { @include span-columns(2); @include shift(2);}
   @include media($desktop) { display: none; }
   text-align: center;
   a { border: 0px;
-    img { border: 0px; height: 80px; width: auto; display: inline-block; margin-top: -10px;}
+    img { border: 0px; height: 60px; width: auto; display: inline-block; margin-top: -10px;}
   }
 }
 
-
-.top-menu-left {
-  @include span-columns(2);
-  
-}
-
-// Main Navigation Menu
+// Main Navigation List
 ul.menu {
   list-style: none;
   margin: 0px;
@@ -98,11 +128,10 @@ ul.menu {
   li {
     display: inline-block;
     text-align: center;
-
-
     i {
       @include transition (all 0.2s ease-in-out);
       @include white-font;
+      color: $dark-d3;
       display: block;
       position: absolute;
       left: 50%;
@@ -116,6 +145,7 @@ ul.menu {
       @include gill-book;
       @include white-font;
       color: #7f8993;
+      color: $dark-d2;
       font-size: 0.9em;
       display: inline-block;
       padding: 30px 15px;
@@ -123,124 +153,33 @@ ul.menu {
       margin-left:-4px;
       background: none;
       text-decoration: none;
-      // border-bottom: 0px solid $white;
       text-transform: uppercase;
       &:hover {
         i {
           margin-top: -25px;
           opacity: 1;
         }
-        color: $white;
+        color: $dark-d3;
         text-decoration: none;
         position: relative;
         z-index: 400;
         top: 10px;
-        padding-bottom: 24px;
-
-        // background: $light;
-        // border-bottom: 3px solid $white;      
+        padding-bottom: 24px;   
       }
     }
-
     .user-login {
-      color: $white;
+     
+      color: $dark-d3;
     }  
   }
 }
 
-// Drop Down Menu
-a.drop-menu {
-
-  &:hover {
-    
-  }
-}
-
-.active-menu {
-  background: $hoopla;
-  color: $white;
-}
-
-ul.dropdown-menu {
- 
-  @include white-font;
-  background: $hoopla;
-  width: 200px;
-  padding:10px 20px;
-  margin:0px;
-  margin-top:-7px;
-  position: absolute;
-  z-index: 900;
-  display: block;
-  &:hover {
-    display: block;
-  }
-  li {
-    display: block;
-    padding: 10px 0px;
-  }
-}
-
-.user-menu {
-  margin-right: 200px;
-}
-
-// TESTGROUNDS
+// Div
 
 .sticky-padding {
   margin-top: 80px;
 }
 
-
-.test-bar {
-  width: 20px;
-  height: 0px;
-  position: fixed;
-  z-index: 999;
-  top: 200px;
-  left: 100px;
-  background: blue;
-}
-
-.top-brander {
-    display: block;
-    width: 90px;
-    height: auto;
-   margin: 0 auto;
-   margin-top: 23px;
- 
-}
-.brand {
-  position: absolute;
-  top: 0px;
-  z-index: 200;
-  width: 100px;
-  height: 140px;
-  background: blue;
-}
-
-// DROPPER TEST
-// .dropper-test:hover  {
-//     .dropper-list {
-//       left: 0px;
-//     }
-//     background: green;
-// }
-
-// .dropper-list {
-//   position: absolute;
-//   left: -9999px;
-//   z-index: 999;
-// } 
-
-.striper {
-  width: 100%;
-  height: 10px;
-  background: url(../images/bg-inter-50.png) repeat;
-  position: relative;
-  z-index: 800;
-  top: 0px;
-}
 
 .top-link-circle {
   margin-top: 25px;
@@ -262,31 +201,50 @@ ul.dropdown-menu {
   &:active {
     background: $dark-d2;
   }
-    a.top-link {
-      color: $white;
-      position: relative;
-      font-size: 20px;
-      padding: 40px 0px;
-      &:hover {
-
-      }
+  a.top-link {
+    color: $white;
+    position: relative;
+    font-size: 20px;
+    padding: 40px 0px;
+    &:hover {
     }
+  }
 }
 
 // Sticky menu styles
 .sticky {  
     position: fixed;  
-    width: 100%;  
+    width: 100%;
+    height: 75px;  
     left: 0;  
     z-index: 999;  
     border-top: 0;
-    
-  
+    background: $white;
+    border-bottom: 3px solid #eeeeee;
+    .scroller-logo {
+      display: block;
+    }
+    .stationary-logo {
+      display: none;
+    }
 } 
 
+// Link styles
+a.muted {
+  color: #8a8f95;
+  @include avenir-light;
+}
+
+
+// Hero Unit Styles
 .screenshots {
+    @include media($mobile) { display: none;}
+    @include media($tablet) { display: block;}
+    @include media($desktop) { display: block;}
   text-align: center;
   margin-bottom: -4px;
+
+
   img {
     display: inline-block;
     width: 947px;
@@ -294,27 +252,25 @@ ul.dropdown-menu {
   }
 }
 
-a.muted {
-  color: #8a8f95;
-  @include avenir-light;
-}
 
-// Hero Unit Styles
 .hero-container {
+    @include media($mobile) { @include linear-gradient(#3c454f, $dark-d2); margin-top: -80px;}
+    @include media($tablet) { background: url(../images/hero-concert-09.jpg) fixed no-repeat; background-size: cover; background-position:center; margin-top: -80px;}
+    @include media($desktop) { background: url(../images/hero-concert-09.jpg) fixed no-repeat; background-size: cover; background-position:center; margin-top: -80px;}
   width: 100%;
-  background: $dark-d1;
-  @include linear-gradient(#3c454f, $dark-d2);
-
-      .arrow-down {
-      @include media($mobile) { display: none;}
-      @include media($tablet) { display: none;}
-      @include media($desktop) { display: block;}
-      }
-  // background: $dark-d2;
-  // background: url(../images/bg-red-90.png) repeat;
+  // background: $dark-d1;
+  // @include linear-gradient(#3c454f, $dark-d2);
   // background: url("../images/concert13.png") fixed;
-  // background-size: cover;
-  // background-position:center; 
+  background-size: cover; background-position:center; 
+
+
+
+  .arrow-down {
+    @include media($mobile) { display: none;}
+    @include media($tablet) { display: none;}
+    @include media($desktop) { display: block;}
+  }
+
   .hero-content {
     @include media($tablet) { border-radius: 0px; }
     @include media($mobile) { border-radius: 0px; }
@@ -324,72 +280,47 @@ a.muted {
     padding: 0px 0px;
     padding-bottom: 0px;
       .hero-element {
-      @include media($mobile) { padding: 0px 20px; @include white-font; color: $white;}
-      @include media($tablet) { padding: 0px 40px; @include white-font; color: $white;}
-      @include media($desktop) { padding: 0px 20px; @include white-font; color: $white;}    
+      @include media($mobile) { padding: 120px 20px 30px 20px; @include white-font; color: $white;}
+      @include media($tablet) { padding: 140px 20px 30px 20px;@include white-font; color: $dark-d3;}
+      @include media($desktop) { padding: 180px 20px 40px 20px; @include white-font; color: $dark-d3;}    
       @include span-columns(12);
-      
       text-align: center;
       position: relative;
-
       .hero-text {
-        @include media($mobile) { text-align: left;}
+        @include media($mobile) { text-align: center;}
         @include media($tablet) { text-align: center; }
         @include media($desktop) { text-align: center; } 
         max-width: 1000px;
-        
         text-align: center;
         margin: 0 auto;
       }
 
+      a.muted {
+       color: $white;
+       text-decoration: none;
+       text-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+       &:hover {
+        color: $dark-d3;
+       }
+      }
 
       h2 {
         // text-shadow: 0px 0px 20px #000;
-        @include media($mobile) { font-size: 2.2em; }
-        @include media($tablet) { font-size: 2.8em; }
-        @include media($desktop) { font-size: 3.2em; }
+        @include media($mobile) { font-size: 1.6em; color: $white;}
+        @include media($tablet) { font-size: 2.8em; color: $dark-d2;}
+        @include media($desktop) { font-size: 3.2em; color: $dark-d2;}
         margin-bottom: 10px;
-        padding-top: 80px;
-       
-        
+        // text-shadow: 0px 0px 20px rgba(0,0,0,0.2);
         
       }
+
       p {
-        padding: 10px 0px;
-        font-size: 1.4em;
+        @include media($mobile) { font-size: 1em; color: $white;}
+        @include media($tablet) { font-size: 1.2em; color: $dark-d3;}
+        @include media($desktop) { font-size: 1.2em; color: $dark-d3;}
+        // text-shadow: 0px 0px 10px rgba(0,0,0,0.2);
 
-        // text-shadow: 0px 0px 10px #000;      
       }
-
-    }
-  }
-
-.hero-action {
-  background: $dark-d1;
-  height: 170px;
-  margin-top: 50px;
-  text-align: center;
-  .btn {
-    @include media($mobile) { padding: 20px 10px; margin-left: 10px; margin-right: 10px; top: -25px;}
-    @include media($tablet) { padding: 20px 10px; margin-left: 10px; margin-right: 10px; top: -75px;}
-    @include media($desktop) { padding: 20px 40px; margin-left: 0px; margin-right: 0px; top: -75px;}
-    position: relative;
-    text-decoration: none;
-    
-  }
-}
-
-.hero-point {
-  @include media($mobile) { @include span-columns(6 of 6); background: none; padding: 20px 0px;}
-  @include media($tablet) { @include span-columns(12 of 12); background: none; padding: 40px 0px;}
-  @include media($desktop) { @include span-columns(4 of 12); @include omega(4n); background: none; padding: 20px 0px;}
-  text-align: center;
-  margin-bottom: 20px;
-  border-radius: 5px;
-    img {
-      max-width: 150px;
-      padding-bottom: 20px;
-      display: inline-block;
     }
   }
 }
@@ -414,17 +345,21 @@ a.muted {
 
 
 .slides-container {
-    background: none;
-  @include media($mobile) { @include span-columns(6 of 6); padding: 20px; height: 250px;}
-  @include media($tablet) { @include span-columns(8 of 12); padding: 20px; height: 200px;}
-  @include media($desktop) { @include span-columns(8 of 12); padding: 0px; height: 150px;}
-
-    
+  background: none;
+  @include media($mobile) { @include span-columns(6 of 6); padding: 20px; }
+  @include media($tablet) { @include span-columns(8 of 12); padding: 20px; }
+  @include media($desktop) { @include span-columns(8 of 12); padding: 0px; }
+  
 }
 
 #slides {
-
+  @include media($mobile) { height: 150px;}
+  @include media($tablet) { height: 150px;}
+  @include media($desktop) { height: 150px;}
   padding-top: 20px;
+}
+
+.single-quote {
 
   img {
     width: 10%;
@@ -432,13 +367,13 @@ a.muted {
    
   }
   p.quote {
-    width: 80%;
-    padding: 0% 5%;
+    @include media($mobile) { font-size: 1em; width: 80%; padding: 0% 5%;}
+    @include media($tablet) { font-size: 1.2em; width: 80%; padding: 0% 5%;}
+    @include media($desktop) { font-size: 1.2em; width: 80%; padding: 0% 5%;}
     @include semi-font;
-    font-size: 1.2em;
+    display: inline-block;
     color: $dark-d3;
     float: left;
-  }
 }
 
 .quote-signoff {
@@ -446,7 +381,7 @@ a.muted {
   color: #aaa;
   float: right;
 }
-
+}
 .partners {
   @include media($mobile) { @include span-columns(6 of 6); padding: 20px; height: 200px;}
   @include media($tablet) { @include span-columns(4 pf 12); padding: 20px; height: 200px;}
@@ -465,17 +400,20 @@ a.muted {
 .quotes-container {
   width: 100%;
   padding: 40px 0px;
-
+  position: relative;
+  z-index: 400;
   background: #eef0f1;
   background: $turq;
   background: $hoopla;
   background: #eee;
-  @include linear-gradient(#fff, #eee);
-
+  // @include linear-gradient(#fff, #eee);
+  background: $white;
+  border-bottom: 3px solid #eee;
     h4 {
       text-align: left;
       @include semi-font;
      color: $dark;
+
       font-size: 0.6em;
       padding-bottom: 10px;
       border-bottom: 1px dotted #aab0b7;
@@ -562,11 +500,11 @@ i.mobile-icon {
 
 .functions-container {
   width: 100%;
-      @include media($mobile) { background: $white;padding: 40px 20px; }
-      @include media($tablet) { background: $white; padding: 175px 20px;}
-      @include media($desktop) { background: $white; padding: 175px 0px;}
+      @include media($mobile) { background: #fafafa;padding: 40px 10px; }
+      @include media($tablet) { background: #fafafa; padding: 175px 20px;}
+      @include media($desktop) { background: #fafafa; padding: 175px 0px;}
   overflow: hidden;
-  @include semi-font;
+  @include dark-font;
 
 
   .functions-content {
@@ -574,84 +512,99 @@ i.mobile-icon {
     background: none;
 
 
+      .image-left {
+        .function-image {
+          float: left;
+
+        }
+        .function-text {
+          float: left;
+        }
+      }
+
+      .image-right {
+        .function-image {
+          float: right;
+        }
+        .function-text {
+          float: right;
+        }
+      }
+
+
+
+
+
+
     .single-function {
-      @include media($mobile) { background: none; @include semi-font; padding: 0px 0px 20px 0px; margin-bottom: 40px;}
-      @include media($tablet) { background: none; @include semi-font; padding: 0px 0px;}
-      @include media($desktop) { background: none; @include semi-font; padding: 0px 0px;}
-      
-      @include span-columns(12);
-      background: none;
-      
-      // border-bottom: 1px dashed #d4d8db;
+      @include media($mobile) { background: #fff; @include semi-font; padding: 10px 10px 10px 10px; margin-bottom: 40px;}
+      @include media($tablet) { background: #fff; @include semi-font; padding: 40px 0px; margin-bottom: 0px;}
+      @include media($desktop) { background: #fff; @include semi-font; padding: 60px 30px; margin-bottom: 0px;}
+      @include span-columns(10);
+      @include shift(1);
+      border: 3px solid #eee; 
+      overflow: hidden;
+     
+
+
 
       .function-text {
+        @include media($mobile) {width: 100%; padding: 0px 0px;}
+        @include media($tablet) {width: 50%; padding: 0px 20px;}
+        @include media($desktop) {width: 50%; padding: 20px 20px;}   
+        text-align: left;
+       
+       
         // @include span-columns(6 of 12);
-        @include media($mobile) { @include span-columns(6 of 6); padding: 0px 20px; text-align: left;}
-        @include media($tablet) { @include span-columns(6 of 12); padding: 0px 20px; text-align: left; }
-        @include media($desktop) { @include span-columns(6 of 12); padding: 0px 40px; text-align: left;}   
+        // @include media($mobile) { @include span-columns(6 of 6); padding: 0px 0px; text-align: left;}
+        // @include media($tablet) { @include span-columns(6 of 12); padding: 0px 20px; text-align: left; }
+        // @include media($desktop) { @include span-columns(6 of 12); padding: 0px 60px; text-align: left;}   
         
+
+      
+
+
         h3 {
-        @include media($mobile) { font-size: 1.8em; text-align: left; padding-top: 0px;}
-        @include media($tablet) { font-size: 2.2em; text-align: left; padding-top: 0px;}
-        @include media($desktop) { font-size: 2.5em; text-align: left; padding-top: 0px;}   
-        
+        @include media($mobile) { font-size: 1.2em; text-align: left; padding-top: 0px;}
+        @include media($tablet) { font-size: 1.8em; text-align: left; padding-top: 0px;}
+        @include media($desktop) { font-size: 1.6em; text-align: left; padding-top: 0px;}
+        @include dark-font;
+        text-transform: uppercase;   
         }
         p {
+          @include semi-font;
+        @include media($mobile) { font-size: 1em; }
+        @include media($tablet) { font-size: 1.2em; }
+        @include media($desktop) { font-size: 1.2em; }
           
-          font-size: 1.4em; 
         }
       }
 
-      .shifter {
-        @include media($mobile) { @include shift(0);}
-        @include media($tablet) { @include shift(1);}
-        @include media($desktop) { @include shift(1);}   
-        
-          img {
-            float: right;  
-          }
-      }
-
-
-      .ft-right {
-        text-align: left;
-      }
-
-      .function-m-image {
-        text-align: center;
-        padding-left: 20px;
-        
-        @include media($mobile) { @include span-columns(6); display: inline-block; img{width:25%;}}
-        @include media($tablet) {display: none;}
-        @include media($desktop) {display: none;}  
-       
-      }
 
       .function-image {
-        @include media($mobile) { @include span-columns(1);   padding: 0px 10px; background: none; display: none;}
-        @include media($tablet) { @include span-columns(4);  padding: 0px 20px; background: none; }
-        @include media($desktop) { @include span-columns(4);  padding: 0px 20px; background: url(../images/strip2.png) repeat;}  
-        // @include span-columns(6 of 12);
+        @include media($mobile) {width: 100%;}
+        @include media($tablet) {width: 50%;}
+        @include media($desktop) {width: 50%;} 
+        // @include media($mobile) { @include span-columns(6);   padding: 0px 10px; background: #aaa;}
+        // @include media($tablet) { @include span-columns(6);  padding: 0px 20px; background: #aaa; }
+        // @include media($desktop) { @include span-columns(6);  padding: 0px 20px; background: #aaa; }
+        // // @include media($desktop) { @include span-columns(4);  padding: 0px 20px; background: url(../images/strip2.png) repeat;}  
+   
+       
         text-align: center;
         display: inline-block;
         
-        border-radius: 10px;
-
-
-
+        
         img {
         display: inline-block;
-         @include media($mobile) { width: 100%; }
-         @include media($tablet) { width: 100%; }
-         @include media($desktop) { width: 100%; }  
-
+         @include media($mobile) { width: 75%; }
+         @include media($tablet) { width: 75%; }
+         @include media($desktop) { width: 50%; }  
         }
-      }
-
-
       }
     }
   }
+}
 
 
 .function-01 {
@@ -681,7 +634,8 @@ i.mobile-icon {
 // About sections
 .about-container {
   width: 100%;
-  background: #fafafa;
+  background: #fff;
+  border-top: 3px solid #eee;
   @include semi-font;
   .about-content {
     padding-top: 100px;
@@ -690,12 +644,17 @@ i.mobile-icon {
     .about-text {
         @include media($mobile) { @include span-columns(6); @include shift(0); padding: 0px 40px;}
         @include media($tablet) { @include span-columns(10); @include shift(1); padding: 0px 40px;}
-        @include media($desktop) { @include span-columns(8); @include shift(2); padding: 0px;}
+        @include media($desktop) { @include span-columns(10); @include shift(1); padding: 0px;}
         h2 {
-        @include media($mobile) {font-size: 1.8em;}
-        @include media($tablet) {font-size: 2.2em;}
-        @include media($desktop) {font-size: 2.5em;}
+        @include media($mobile) {font-size: 1.6em;}
+        @include media($tablet) {font-size: 2.4em;}
+        @include media($desktop) {font-size: 2.8em;}
+        @include dark-font;
         }
+
+      p {
+        font-size: 1.2em;
+      }
       text-align: left;
     }
     .about-users {
@@ -706,21 +665,27 @@ i.mobile-icon {
       padding-bottom: 150px;
       @include span-columns(8); @include shift(2);
       h2 {
-        @include media($mobile) {font-size: 1.8em;}
-        @include media($tablet) {font-size: 2.2em;}
-        @include media($desktop) {font-size: 2.5em;}
+        @include media($mobile) {font-size: 1.6em;}
+        @include media($tablet) {font-size: 2.4em;}
+        @include media($desktop) {font-size: 2.8em;}
         text-align: center;
         margin-bottom: 20px;
+        @include dark-font;
+      }
+
+      p {
+        font-size: 1em;
       }
 
       
       .user-image {
-        @include media($mobile) { @include span-columns(3 of 6); @include omega(2n); padding: 10px;}
-        @include media($tablet) { @include span-columns(4 of 12); @include omega(2n); padding: 10px;}
-        @include media($desktop) { @include span-columns(4 of 12); @include omega(2n); padding: 10px;}
+        @include media($mobile) { @include span-columns(3 of 6); @include omega(1n); padding: 10px;}
+        @include media($tablet) { @include span-columns(4 of 12); @include omega(1n); padding: 10px;}
+        @include media($desktop) { @include span-columns(4 of 12); @include omega(1n); padding: 10px;}
         text-align: center;
         height: 240px;
         @include semi-font;
+        background: none;
 
         img {
           border-radius: 400px;
@@ -732,6 +697,7 @@ i.mobile-icon {
         h4 {
           text-transform: uppercase;
           font-size: 1em;
+          @include dark-font;
         }
         p {
           font-size: 0.8em;
@@ -885,16 +851,21 @@ i.mobile-icon {
         img {
           width: 100%;
         }
+      }
     }
-  }
   }
 }
 
 
 .btn {
+  @include media($mobile) { padding: 20px 20px;}
+  @include media($tablet) { padding: 20px 40px;}
+  @include media($desktop) { padding: 20px 40px;}
   margin: 2em 0em;
   padding: 20px 40px;
-  background: $turq;
+
+  background: #99da50;
+
   border-radius: 5px;
   border: 0px;
   box-shadow: none;
@@ -903,18 +874,24 @@ i.mobile-icon {
   text-align: center;
   @include avenir-med;
   @include dark-font;
+  // text-shadow: 0px 0px 3px $hoopla-d3;
+
+  color: $dark-d3;
   font-size: 1.2em;
   @include transition (all 0.1s ease-in-out);
-  border: 3px solid $dark-d2;
-  box-shadow: 0px 0px 30px $dark;
+  border: 3px solid #5b9732;
+  box-shadow: 0px 0px 30px rgba(0,0,0,0.3);
+
   i {
     padding-right: 5px;
   }
   &:hover {
    
-    
-    background: $turq-d1;
+
+    border-color: #7ac943;
+    background: #a8e357;
     cursor: pointer;
+
 
   }
 }
