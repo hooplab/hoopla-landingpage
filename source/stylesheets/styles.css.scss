@@ -910,177 +910,108 @@ i.mobile-icon {
 
 // Salgsportal
 
-
-.sales-event-type-container, .diverse-container, .hoop-container {
-  background: $dark-d1;
-  float: left;
-  padding-top: 20px;
-  padding-bottom: 10px;
-}
-
-.diverse-container, .hoop-container {
-  display: none;
+.sales-block {
   width: 100%;
-  padding: 50px;
-}
-
-.sales-top-menu {
-  ul {
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
-
-    li {
-      @include avenir-med;
-      border-radius: 3px 3px 0px 0px; 
-      display: inline-block;
-      padding: 20px;
-      background: $dark-d2;
-      @include white-font;
-      margin-right: -5px;
-      &:hover {
-        cursor: pointer;
-        background: $dark-d1;
-      }
-    }
-    .active {
-      background: $dark-d1;
-    }
-  }
-}
-
-
-.sales-container {
-  width: 100%;
-  min-height: 100vh;
-  background: $dark;
-  float: left;
-
-}
-
-.sales-header {
-  background: none;
-  cursor: pointer;
-  background: $dark;
-  padding: 10px 0px;
-
-  &:hover {
-    background: $dark-d2;
-  }
-
-}
-
-.sales-body {
-  float: left;
-  display: none;
-  background: $white;
-  padding: 20px 0px;
-  width: 100%;
-}
-
-.sales-text {
-  @include span-columns(12);
-  @include omega(2n);
+  height: 100%;
   padding: 20px;
-  p {
-    font-size: 2em;
-
+  background: #fafafa;
+  margin-bottom: 20px;
+  .label {
+    width: 50px;
+    float: left;
+    margin-right: 20px;
+    height: 100%;
+    background: #000;
   }
-}
-img.sales-logo {
-  width: 75px;
-  height: auto;
-  position: absolute;
-  top: 0px;
-  
-}
 
-.sales-links {
-  padding: 10px 20px;
   @include span-columns(12);
-  @include shift(0);
+
+  p {
+    font-size: 1em;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+    font-size: 2.2em;
+    color: $dark-d2;
+    text-transform: uppercase;
+  }
+
+  a {
+    text-decoration: none;
+    color: $blue-d1;
+    &:hover {
+      color: $blue;
+    }
+  }
+
+  img.download-image {
+    width: 150px;
+    height: 150px;
+    text-align: center;
+  }
+
+  i {
+    @include transition (all 0.15s ease-in-out);
+    @include white-font;
+    position: relative;
+    z-index: 200;
+    top: 25px;
+    margin-left: 30px;
+    left: -50%;
+    font-size: 1em;
+    color: $white;
+    text-shadow: 0px 0px 3px #000;
+  }
+
+  .grouper {
+    float: left;
+  }
+
+  p.download {
+    position: relative;
+    z-index: 100;
+    background: $dark-d3;
+    color: #fff;
+    @include white-font;
+    margin-top: -40px;
+    padding: 10px 0px 5px 0px;  
+  }
+
+  .download-item {
+    @include transition (all 0.15s ease-in-out);
+    width: 150px;
+    text-align: center;
+    opacity: 0.8;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 20px;
+
+    overflow: hidden;
+    &:hover {
+      i {
+        color: $blue;
+      }
+      opacity: 1;
+    }
   }
 
 
-.sales-types, .ads-types {
-   float: left;
-   width: 100%;
+}
+
+
+.sales-logo {
+  position: absolute;
+  width: 75px;
+  top: 0px;
 }
 
 .sales-content {
-    @include outer-container;
-    padding: 20px;
-
-    a {
-      @include dark-font;
-      color: $blue;
-      @include gill-book;
-    }
-
-    .sales-intro {
-      @include white-font;
-      @include span-columns(12);
-      padding-top: 50px;
-      padding-bottom: 50px;
-
-    }
-
-    .sales-group {
-      background: #eee;
-
-      margin-bottom: 10px;
-
-      border-radius: 3px;
-      h4 {
-        padding-top:5px;
-        text-align: center;
-        font-size: 1em;
-        @include semi-font;
-      }
-    }
-
-
-
-    .sales-item {
-      // @include transition (padding 0.1s ease-in-out);
-      float: left;
-      @include span-columns(12);
-      margin-bottom: 10px;
-      
-      padding-left: 20px;
-      padding-right: 20px;
-
-      i {
-        margin-right: 10px;
-      }
-
-      a {
-        @include gill-book;
-        color: $blue-d1;
-        font-size: 1.2em;
-        &:hover {
-        color: $blue;
-        }
-      }
-      h3 {
-        @include white-font;
-        font-size: 1.6em;
-        padding-left: 20px;
-      }
-      p {
-        font-size: 0.8em;
-        @include white-font;
-        padding-left:20px;
-        
-      }
-
-      p.info {
-        @include dark-font;
-        font-size: 1em;
-      }
-    }
-
+  @include outer-container;
+  padding-top: 100px;
 }
+
+
 
 
 
