@@ -297,10 +297,10 @@ a.muted {
 
       a.muted {
        color: $white;
-       text-decoration: none;
+       text-decoration: underline;
        text-shadow: 0px 0px 10px rgba(0,0,0,0.4);
        &:hover {
-        color: $dark-d3;
+        color: $blue;
        }
       }
 
@@ -310,7 +310,7 @@ a.muted {
         @include media($tablet) { font-size: 2.8em; color: $dark-d2;}
         @include media($desktop) { font-size: 3.2em; color: $dark-d2;}
         margin-bottom: 10px;
-        // text-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+        text-shadow: 0px 0px 20px rgba(255,255,255,0.5);
         
       }
 
@@ -318,8 +318,8 @@ a.muted {
         @include media($mobile) { font-size: 1em; color: $white;}
         @include media($tablet) { font-size: 1.2em; color: $dark-d3;}
         @include media($desktop) { font-size: 1.2em; color: $dark-d3;}
-        // text-shadow: 0px 0px 10px rgba(0,0,0,0.2);
-
+       
+        text-shadow: 0px 0px 15px rgba(255,255,255,0.3);
       }
     }
   }
@@ -1013,6 +1013,46 @@ i.mobile-icon {
 
 
 
+
+.guide-content {
+  @include outer-container;
+  padding-top: 50px;
+  padding: 20px;
+}
+
+.guide-block {
+  max-width: 640px;
+  padding: 40px 20px;
+  border: 1px solid red;
+  margin: 0 auto;
+  background: #fafafa;
+  border: 3px solid #eee;
+  margin-bottom: 40px;
+   p {
+    margin-top: 40px;
+    font-size: 1em;
+  }
+
+  h2 {
+    margin-bottom: 40px;
+    font-size: 1.6em;
+    color: $dark-d2;
+    text-transform: uppercase;
+  }
+
+  a {
+    text-decoration: none;
+    color: $blue-d1;
+    &:hover {
+      color: $blue;
+    }
+  }
+  img {
+    overflow: hidden;
+    border-radius: 5px;
+    width: 100%;
+  }
+}
 
 
 
