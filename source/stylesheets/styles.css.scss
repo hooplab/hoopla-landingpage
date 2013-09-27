@@ -63,9 +63,10 @@ html, body {
 
 
 
-  top: 0px;
-  position: relative;
+  
+  position: absolute;
   z-index: 999;
+  top: 0px;
   @include media($mobile) { background: none; }
   @include media($tablet) { background: none; }
   @include media($desktop) { background: none; }
@@ -282,7 +283,7 @@ a.muted {
       .hero-element {
       @include media($mobile) { padding: 120px 20px 30px 20px; @include white-font; color: $white;}
       @include media($tablet) { padding: 140px 20px 30px 20px;@include white-font; color: $dark-d3;}
-      @include media($desktop) { padding: 180px 20px 40px 20px; @include white-font; color: $dark-d3;}    
+      @include media($desktop) { padding: 220px 20px 40px 20px; @include white-font; color: $dark-d3;}    
       @include span-columns(12);
       text-align: center;
       position: relative;
@@ -425,6 +426,19 @@ a.muted {
       color: $turq;
       margin: 20px 20px 60px 20px;    
     }
+
+  .testquote {
+
+    @include span-columns(12);
+    height: 200px;
+    
+    h2 {
+      @include avenir-r;
+      @include white-font;
+      color: $dark-d2;
+      font-size: 2em;
+    }
+  }
 
   .quotes-content {
     border-top: 10px;

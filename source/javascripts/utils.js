@@ -62,7 +62,7 @@ $(".test.one").insertAfter(".test.three");
 		if (scrollTop > (stickyNavTop+150) && stickySet == 0 && windowWidth > 780) {
 	    	$('.top-menu-container').addClass('sticky');
         $('.top-menu-container').css('margin-top', '-80px');
-        $('.hero-container').addClass('sticky-padding');
+        // $('.hero-container').addClass('sticky-padding');
         $('.top-menu-container').transition({ 
           'margin-top': '0px',
           duration: 400,
@@ -72,7 +72,7 @@ $(".test.one").insertAfter(".test.three");
 
 			} else if (scrollTop <= (stickyNavTop)) {
 	    	$('.top-menu-container').removeClass('sticky');
-        $('.hero-container').removeClass('sticky-padding');
+        // $('.hero-container').removeClass('sticky-padding');
         stickySet = 0;  
 		  }
     // Scrolling elements Paralax
