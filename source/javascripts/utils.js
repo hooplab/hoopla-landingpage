@@ -1,30 +1,56 @@
+// URL Splitter
+var urlChecker = function(urlToCheck) {
+  var subpage = window.location.href.split("/")[3];
+  if ((urlToCheck == window.location.href.split("/")[2]) && subpage == null) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+var urlRedirect = function(urlToSplit, urlA, urlB) {
+  if (urlChecker(urlToSplit)) {
+    var redirecter = Math.floor(Math.random() * 2) + 1;
+    if (redirecter == 1) {
+    window.location.replace(urlA);
+    } else {
+    window.location.replace(urlB);
+    }
+  }
+}
+
+// Splitter
+urlRedirect("localhost:4567", "http://www.google.com", "http://www.db.no");
+
+
 $(document).ready(function() {
 
-// Mobile checker
-// var isMobile = {
-//     Android: function() {
-//         return navigator.userAgent.match(/Android/i);
-//     },
-//     BlackBerry: function() {
-//         return navigator.userAgent.match(/BlackBerry/i);
-//     },
-//     iOS: function() {
-//         return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-//     },
-//     Opera: function() {
-//         return navigator.userAgent.match(/Opera Mini/i);
-//     },
-//     Windows: function() {
-//         return navigator.userAgent.match(/IEMobile/i);
-//     },
-//     any: function() {
-//         return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-//     }
-// };
 
-// if( isMobile.any() ) {
-//   $('.mobile-site-chooser').css('display', 'block');
-// };
+
+// Custom Guide Slideshow
+var setSlideSize = function() {
+  var containerWidth = $(".guide-slider-container").width();
+  $(".guide-block").width(containerWidth);
+  console.log("Set to width: "+containerWidth);
+}
+
+setSlideSize();
+
+$( window ).resize(function() {
+  setSlideSize();
+});
+
+
+var slideNumber = 0;
+$("#guide-next").click(function() {
+  var moveWidth = $(".guide-slider-container").width();
+  slideNumber = slideNumber+1;
+  console.log(slideNumber);
+  console.log(moveWidth*slideNumber);
+  $(".guide-slider").css('left', -moveWidth*slideNumber);
+})
+
+
 
 
 // Scroll To Navigation  
@@ -34,21 +60,14 @@ $('.internal a').on('click', function(event){
 });
 
 
-// Div reordering
-// $(window).bind("resize", listenWidth);
-//     function listenWidth( e ) {
-//         if($(window).width()<600)
-//         {
-//             console.log("Reflowiubng");
-//             $(".function-text.shifter").remove().insertAfter($(".function-image"));
-//         } else {
-//             // $("#topLinks").remove().insertBefore($("#content"));
-//         }
-//     }
-
-
-$(".test.one").insertAfter(".test.three");
-
+// Guide switcher
+$(".gif-play").click(function(){
+  var original = $(this).data('original');
+  var imgurl = $(this).attr('src').replace(/\/[^/]+$/, '/'+original);
+  $(this).attr('src', imgurl);
+  $(this).css('opacity', '1');
+  // $(this).css('height', '400px');
+});
 
 // Sticky top menu
 	var stickyNavTop = $('.top-menu-container').offset().top;  
@@ -82,13 +101,29 @@ $(".test.one").insertAfter(".test.three");
     // $('.top-menu-container').css('top', -menuTop+"px");
     // $('.hero-text').css('top', heroTop+"px");
     // $('.hero-element').css('opacity', heroOpa);
-	};  
-	  
-	stickyNav();  
+	};
 
-	$(window).scroll(function() {  
-	    stickyNav();
-		});
+  var hasScrolled = false;
+
+  $(window).scroll(function() {
+      hasScrolled = true;
+  })
+
+  setInterval(function() {
+      if (hasScrolled) {
+        console.log("HasS crolled");
+        hasScrolled = false;
+        stickyNav();
+      }
+  }, 200);
+
+  
+	  
+	// stickyNav();  
+
+	// $(window).scroll(function() {  
+	//     stickyNav();
+	// 	});
 
     // Slides
     $(function(){
@@ -98,5 +133,8 @@ $(".test.one").insertAfter(".test.three");
         play: {active: false, interval: 5000, auto: true, effect: "slide"}
        
       });
+
     });  
+
+
 });

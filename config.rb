@@ -36,6 +36,12 @@ activate :s3_sync do |s3_sync|
   s3_sync.prefer_gzip           = true
 end
 
+
+# Guide files
+ proxy "guide/index.html", "guide.html", :locals => { :steps => [0] }
+ proxy "guide/intro.html", "guide.html", :locals => { :steps => [0] }
+ proxy "guide/guidetest.html", "guide.html", :locals => { :steps => [1, 2, 3] }
+
 # Proxy pages (http://middlemanapp.com/dynamic-pages/)
 # proxy "/this-page-has-no-template.html", "/template-file.html", :locals => {
 #  :which_fake_page => "Rendering a fake page with a local variable" }

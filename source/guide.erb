@@ -1,0 +1,66 @@
+
+<div class="guide-container">
+
+	<div class="guide-menu">
+		<ul>
+		<h2>Arrangement</h2>
+		<li><%= link_to 'Guidetest', 'guidetest.html' %></li>
+		<li>Anotherthing</li>
+		<li>Whatawhackamole</li>
+		<li>Quack</li>
+
+		<h2>Arrangør</h2>
+		<li>Whachamajigga</li>
+		<li>Whombats</li>
+		</ul>
+	</div>
+
+	<div id="guide-content">
+	<a href="#" id="guide-next">NEXT</a>
+	<div class="guide-slider-container">
+
+
+		<div class="guide-slider">
+		<!-- #1 -->
+		<div class="guide-block" <%= 'style="display:inline-block"' if steps.include? 1 %>>
+			<h2>1/<%= steps.length %> Opprette nytt arrangement</h2>
+			
+			<%= image_tag 'guide-play.gif', :class => 'gif-play', :'data-original' => 'guide-01.gif' %>
+		
+			<p>For å opprette arrangement  klikker du på "Nytt arrangement" etter du har logget inn. Du vil da komme til veiviseren for opprettelse av nytt arrangement.</p> 
+		</div>
+
+		<!-- #2 -->
+		<div class="guide-block" <%= 'style="display:inline-block"' if steps.include? 2 %>>
+			<h2>2. Opprette nytt arrangement</h2>
+			<%= image_tag 'guide-play.gif', :class => 'gif-play', :'data-original' => 'guide-02.gif' %>
+			<p>For å opprette arrangement  klikker du på "Nytt arrangement" etter du har logget inn. Du vil da komme til veiviseren for opprettelse av nytt arrangement.</p>
+		</div>
+
+		<!-- #3 -->
+		<div class="guide-block" <%= 'style="display:inline-block"' if steps.include? 3 %>>
+			<h2>3. Opprette nytt arrangement</h2>
+			<%= image_tag 'guide-play.gif', :class => 'gif-play', :'data-original' => 'guide-03.gif' %>
+			<p>For å opprette arrangement  klikker du på "Nytt arrangement" etter du har logget inn. Du vil da komme til veiviseren for opprettelse av nytt arrangement.</p>
+		</div>
+
+		<!-- #4 -->
+		<div class="guide-block" <%= 'style="display:inline-block"' if steps.include? 4 %>>
+			<h2>3. Opprette nytt arrangement</h2>
+			<%= image_tag 'guide-play.gif', :class => 'gif-play', :'data-original' => 'guide-04.gif' %>
+			<p>For å opprette arrangement  klikker du på "Nytt arrangement" etter du har logget inn. Du vil da komme til veiviseren for opprettelse av nytt arrangement.</p>
+		</div>
+
+		<!-- #0 -->
+		<div class="guide-block" <%= 'style="display:inline-block"' if steps.include? 0 %>>
+			<h2>Hoopla Brukermanual</h2>
+			<p>For å opprette arrangement  klikker du på "Nytt arrangement" etter du har logget inn. Du vil da komme til veiviseren for opprettelse av nytt arrangement.</p> 
+		</div>
+		
+		</div>			
+
+	</div>
+	</div>
+
+
+</div>
